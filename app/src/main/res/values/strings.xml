@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">App_Lance_os_Dados_DevVenture</string>
+    <string name="play">Jogar</string>
+    <string name="next">Regular</string>
+    <string name="toast_type_your_name">Digite o seu nome</string>
+    <string name="lucky_day">Será hoje o seu dia de sorte?</string>
+    <string name="result">Resultado</string>
+    <string name="lets_go">jogar!</string>
+</resources>

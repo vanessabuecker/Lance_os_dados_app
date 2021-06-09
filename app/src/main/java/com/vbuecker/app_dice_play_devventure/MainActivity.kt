@@ -1,0 +1,80 @@
+package com.vbuecker.app_dice_play_devventure
+
+import android.content.Context
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import com.vbuecker.app_lanamento_dados_devventure.R
+import com.vbuecker.app_lanamento_dados_devventure.databinding.ActivityMainBinding
+import pl.droidsonroids.gif.GifImageView
+
+class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding
+    private lateinit var diceImgOne: GifImageView
+    private lateinit var diceImgTwo: GifImageView
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        supportActionBar?.title = ""
+        val actionbar = supportActionBar
+        actionbar?.setDisplayHomeAsUpEnabled(true)
+        actionbar?.setDisplayHomeAsUpEnabled(true)
+
+        val button = binding.button
+
+        val text_view_title = binding.textViewTitle
+        val username = intent.getStringExtra("Username")
+        val newTitle = "Hoje é o seu dia de sorte, $username?"
+        text_view_title.text = newTitle
+
+        val sharedPref =
+            this.getSharedPreferences("LoginPreferences", Context.MODE_PRIVATE) ?: return
+        with(sharedPref.edit())
+        {
+            clear()
+            commit()
+        }
+
+        button.text = getString(R.string.lets_go)
+        button.setOnClickListener {
+            rollDice()
+        }
+
+        diceImgOne = binding.dice1
+        diceImgTwo = binding.dice2
+    }
+
+    private fun rollDice() {
+        val drawableResource = when (java.util.Random().nextInt(6) + 1) {
+            1 -> R.drawable.dice1
+            2 -> R.drawable.dice2
+            3 -> R.drawable.dice3
+            4 -> R.drawable.dice4
+            5 -> R.drawable.dice5
+            else
+            -> R.drawable.dice6
+        }
+        diceImgOne.setImageResource(drawableResource)
+
+        val drawableResource2 = when (java.util.Random().nextInt(6) + 1) {
+            1 -> R.drawable.dice1
+            2 -> R.drawable.dice2
+            3 -> R.drawable.dice3
+            4 -> R.drawable.dice4
+            5 -> R.drawable.dice5
+            else
+            -> R.drawable.dice6
+        }
+        diceImgTwo.setImageResource(drawableResource2)
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
+    }
+
+}
+
+

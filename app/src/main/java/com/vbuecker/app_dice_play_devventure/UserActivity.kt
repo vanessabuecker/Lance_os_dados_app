@@ -10,7 +10,7 @@ import com.vbuecker.app_lanamento_dados_devventure.R
 import com.vbuecker.app_lanamento_dados_devventure.databinding.ActivityUserBinding
 
 class UserActivity : AppCompatActivity() {
-    @SuppressLint("CommitPrefEdits")
+    @SuppressLint("EditTextCommits")
     private lateinit var binding: ActivityUserBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {

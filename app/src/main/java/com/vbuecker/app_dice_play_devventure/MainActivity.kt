@@ -2,6 +2,7 @@ package com.vbuecker.app_dice_play_devventure
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.vbuecker.app_lanamento_dados_devventure.R
 import com.vbuecker.app_lanamento_dados_devventure.databinding.ActivityMainBinding
@@ -26,7 +27,7 @@ class MainActivity : AppCompatActivity() {
 
         val text_view_title = binding.textViewTitle
         val username = intent.getStringExtra("Username")
-        val newTitle = "Hoje é o seu dia de sorte, $username?"
+        val newTitle = "Será hoje o seu dia de sorte, $username?"
         text_view_title.text = newTitle
 
         val sharedPref =
@@ -73,7 +74,9 @@ class MainActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
         return true
+
     }
+
 
 }
 

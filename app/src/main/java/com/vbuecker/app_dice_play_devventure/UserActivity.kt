@@ -22,8 +22,9 @@ class UserActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         supportActionBar?.title = "Lance os Dados"
-
+        val button_special = binding.buttonSpecial
         val button_next = binding.buttonNext
+        val edit_text_input_name = binding.editTextInputName
         button_next.setOnClickListener {
             val name = binding.editTextInputName.text
             val nameString = name.toString().trim()
@@ -37,6 +38,12 @@ class UserActivity : AppCompatActivity() {
                 saveUsername(nameString)
                 goUserActivity(nameString)
             }
+        }
+        button_special.setOnClickListener{
+            var player = edit_text_input_name.text.toString()
+            val intent = Intent(this, SpecialActivity::class.java)
+            intent.putExtra("username", player)
+            startActivity(intent)
         }
     }
 

@@ -3,9 +3,8 @@
     <string name="play">Jogar</string>
     <string name="next">Regular</string>
     <string name="toast_type_your_name">Digite o seu nome</string>
-    <string name="lucky_day">Será hoje o seu dia de sorte?</string>
     <string name="result">Resultado</string>
     <string name="lets_go">jogar!</string>
     <string name="special">Especial</string>
-    <string name="welcome">"Será que hoje é o seu dia de sorte, %s"</string>
+    <string name="welcome">"Será que hoje é o seu dia de sorte, %s?"</string>
 </resources>

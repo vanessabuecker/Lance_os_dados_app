@@ -40,8 +40,10 @@ class MainActivity : AppCompatActivity() {
             if (intent.resolveActivity(this.packageManager) != null) {
                 startActivity(intent)
             } else {
-                //startActivity("pacote da loja")
-                Toast.makeText(this, "você não tem o Whatsapp instalado", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Você não possui o Whatsapp instalado", Toast.LENGTH_SHORT)
+                    .show()
+
+                // TODO: 11/06/2021 share print screen, redirect to download whatsapp
             }
         }
 
@@ -53,7 +55,6 @@ class MainActivity : AppCompatActivity() {
             commit()
         }
 
-        button.text = getString(R.string.lets_go)
         button.setOnClickListener {
             rollDice()
         }
@@ -84,9 +85,6 @@ class MainActivity : AppCompatActivity() {
             -> R.drawable.dice6
         }
         diceImgTwo.setImageResource(drawableResource2)
-        val dado1 = binding.textView1
-        if (drawableResource == 1)
-            dado1.text = "1"
     }
 
     override fun onSupportNavigateUp(): Boolean {

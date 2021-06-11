@@ -74,12 +74,10 @@
         android:layout_marginBottom="139dp"
         android:clickable="true"
         android:focusable="true"
-        android:foregroundTint="@color/gray_border"
         app:backgroundTint="@color/primary_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/special_dice_1"
-        app:rippleColor="#F8EDED"
         app:srcCompat="@android:drawable/ic_menu_share" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

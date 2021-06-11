@@ -80,6 +80,7 @@ class SpecialActivity : AppCompatActivity() {
                 animation = AnimationUtils.loadAnimation(this@SpecialActivity, R.anim.dice_anim)
 
                 val random2 = Random().nextInt(8)
+
                 special_dice2.startAnimation(animation)
 
                 animation.setAnimationListener(object : Animation.AnimationListener {
@@ -96,15 +97,14 @@ class SpecialActivity : AppCompatActivity() {
                     }
                 })
             }
-
         })
     }
 
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
         return true
-
     }
+
 }
 
 

@@ -39,7 +39,7 @@ class UserActivity : AppCompatActivity() {
                 goUserActivity(nameString)
             }
         }
-        button_special.setOnClickListener{
+        button_special.setOnClickListener {
             var player = edit_text_input_name.text.toString()
             val intent = Intent(this, SpecialActivity::class.java)
             intent.putExtra("username", player)

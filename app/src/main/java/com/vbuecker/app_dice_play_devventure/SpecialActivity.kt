@@ -22,6 +22,11 @@ class SpecialActivity : AppCompatActivity() {
         binding = ActivitySpecialBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        supportActionBar?.title = ""
+        val actionbar = supportActionBar
+        actionbar?.setDisplayHomeAsUpEnabled(true)
+        actionbar?.setDisplayHomeAsUpEnabled(true)
+
         val button = binding.buttonPlay
 
         val tv_welcome = binding.textViewTitle
@@ -95,6 +100,11 @@ class SpecialActivity : AppCompatActivity() {
         })
     }
 
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
+
+    }
 }
 
 

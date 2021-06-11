@@ -74,7 +74,6 @@
         android:layout_marginEnd="36dp"
         android:layout_marginBottom="139dp"
         android:clickable="true"
-        android:contentDescription="TODO"
         android:focusable="true"
         android:foregroundTint="@color/gray_border"
         app:backgroundTint="@color/primary_color"
@@ -83,16 +82,5 @@
         app:layout_constraintTop_toBottomOf="@+id/dice_1"
         app:rippleColor="#F8EDED"
         app:srcCompat="@android:drawable/ic_menu_share" />
-
-
-    <TextView
-        android:id="@+id/textview_result"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="117dp"
-        android:layout_marginBottom="68dp"
-        android:text=""
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintStart_toStartOf="@+id/button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

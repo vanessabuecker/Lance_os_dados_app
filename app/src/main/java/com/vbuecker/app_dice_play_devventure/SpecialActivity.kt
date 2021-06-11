@@ -38,8 +38,8 @@ class SpecialActivity : AppCompatActivity() {
 
         button.setOnClickListener {
             getRandomValue()
-
         }
+
         diceImages.add(R.drawable.specialdice1)
         diceImages.add(R.drawable.specialdice2)
         diceImages.add(R.drawable.specialdice3)
@@ -83,7 +83,6 @@ class SpecialActivity : AppCompatActivity() {
                 val random2 = Random().nextInt(8)
 
                 special_dice2.startAnimation(animation)
-
                 animation.setAnimationListener(object : Animation.AnimationListener {
 
                     override fun onAnimationRepeat(p0: Animation?) {

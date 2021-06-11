@@ -9,7 +9,6 @@ import com.vbuecker.app_lanamento_dados_devventure.R
 import com.vbuecker.app_lanamento_dados_devventure.databinding.ActivityMainBinding
 import pl.droidsonroids.gif.GifImageView
 
-
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var diceImgOne: GifImageView
@@ -42,7 +41,6 @@ class MainActivity : AppCompatActivity() {
             } else {
                 Toast.makeText(this, "Você não possui o Whatsapp instalado", Toast.LENGTH_SHORT)
                     .show()
-
                 // TODO: 11/06/2021 share print screen, redirect to download whatsapp
             }
         }
@@ -54,40 +52,42 @@ class MainActivity : AppCompatActivity() {
             clear()
             commit()
         }
+
         diceImgOne = binding.dice1
         diceImgTwo = binding.dice2
 
         button.setOnClickListener {
-              rollDice()
-          }
+            rollDice()
+        }
 
-          diceImgOne = binding.dice1
-          diceImgTwo = binding.dice2
-      }
+        diceImgOne = binding.dice1
+        diceImgTwo = binding.dice2
+    }
 
-      private fun rollDice() {
-          val drawableResource = when (java.util.Random().nextInt(6) + 1) {
-              1 -> R.drawable.dice1
-              2 -> R.drawable.dice2
-              3 -> R.drawable.dice3
-              4 -> R.drawable.dice4
-              5 -> R.drawable.dice5
-              else
-              -> R.drawable.dice6
-          }
-          diceImgOne.setImageResource(drawableResource)
+    private fun rollDice() {
+        val drawableResource = when (java.util.Random().nextInt(6) + 1) {
+            1 -> R.drawable.dice1
+            2 -> R.drawable.dice2
+            3 -> R.drawable.dice3
+            4 -> R.drawable.dice4
+            5 -> R.drawable.dice5
+            else
+            -> R.drawable.dice6
+        }
 
-          val drawableResource2 = when (java.util.Random().nextInt(6) + 1) {
-              1 -> R.drawable.dice1
-              2 -> R.drawable.dice2
-              3 -> R.drawable.dice3
-              4 -> R.drawable.dice4
-              5 -> R.drawable.dice5
-              else
-              -> R.drawable.dice6
-          }
-          diceImgTwo.setImageResource(drawableResource2)
-      }
+        diceImgOne.setImageResource(drawableResource)
+
+        val drawableResource2 = when (java.util.Random().nextInt(6) + 1) {
+            1 -> R.drawable.dice1
+            2 -> R.drawable.dice2
+            3 -> R.drawable.dice3
+            4 -> R.drawable.dice4
+            5 -> R.drawable.dice5
+            else
+            -> R.drawable.dice6
+        }
+        diceImgTwo.setImageResource(drawableResource2)
+    }
 
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()

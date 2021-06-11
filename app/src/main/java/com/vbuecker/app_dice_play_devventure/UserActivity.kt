@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.vbuecker.app_lanamento_dados_devventure.R
@@ -22,9 +23,11 @@ class UserActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         supportActionBar?.title = "Lance os Dados"
+
+        val edit_text_input_name = binding.editTextInputName
         val button_special = binding.buttonSpecial
         val button_next = binding.buttonNext
-        val edit_text_input_name = binding.editTextInputName
+
         button_next.setOnClickListener {
             val name = binding.editTextInputName.text
             val nameString = name.toString().trim()

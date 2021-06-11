@@ -23,7 +23,6 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.title = ""
         val actionbar = supportActionBar
         actionbar?.setDisplayHomeAsUpEnabled(true)
-        actionbar?.setDisplayHomeAsUpEnabled(true)
 
         val button = binding.button
 

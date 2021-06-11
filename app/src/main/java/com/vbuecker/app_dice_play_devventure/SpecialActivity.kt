@@ -25,7 +25,6 @@ class SpecialActivity : AppCompatActivity() {
         supportActionBar?.title = ""
         val actionbar = supportActionBar
         actionbar?.setDisplayHomeAsUpEnabled(true)
-        actionbar?.setDisplayHomeAsUpEnabled(true)
 
         val button = binding.buttonPlay
 
@@ -36,8 +35,10 @@ class SpecialActivity : AppCompatActivity() {
 
         special_dice1 = binding.specialDice1
         special_dice2 = binding.specialDice2
+
         button.setOnClickListener {
             getRandomValue()
+
         }
         diceImages.add(R.drawable.specialdice1)
         diceImages.add(R.drawable.specialdice2)

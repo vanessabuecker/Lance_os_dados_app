@@ -8,16 +8,16 @@
 
     <TextView
         android:id="@+id/text_view_title"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
         android:layout_marginTop="120dp"
         android:layout_marginEnd="36dp"
         android:fontFamily="sans-serif-light"
-        android:text="@string/lucky_day"
+        android:text="@string/welcome"
         android:textAlignment="center"
-        android:textColor="#353434"
-        android:textSize="20sp"
+        android:textColor="@color/gray_darker1"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -77,5 +77,21 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foregroundTint="@color/gray_border"
+        app:backgroundTint="@color/primary_color"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:rippleColor="#F8EDED"
+        app:srcCompat="@android:drawable/ic_menu_share"
+        android:contentDescription="TODO" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,8 +1,9 @@
 package com.vbuecker.app_dice_play_devventure
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.vbuecker.app_lanamento_dados_devventure.R
 import com.vbuecker.app_lanamento_dados_devventure.databinding.ActivityMainBinding
@@ -26,9 +27,23 @@ class MainActivity : AppCompatActivity() {
         val button = binding.button
 
         val text_view_title = binding.textViewTitle
+        val share_button = binding.floatingActionButton
         val username = intent.getStringExtra("Username")
-        val newTitle = "Será hoje o seu dia de sorte, $username?"
+        val newTitle = getString(R.string.welcome, username)
         text_view_title.text = newTitle
+
+        share_button.setOnClickListener {
+            val intent = Intent(Intent.ACTION_SEND)
+            intent.putExtra(Intent.EXTRA_TEXT, "Você é sortudo!")
+            intent.setPackage("com.whatsapp")
+            intent.type = "text/plain"
+            if (intent.resolveActivity(this.packageManager) != null) {
+                startActivity(intent)
+            } else {
+                //startActivity("pacote da loja")
+                Toast.makeText(this, "você não tem o Whatsapp instalado", Toast.LENGTH_SHORT).show()
+            }
+        }
 
         val sharedPref =
             this.getSharedPreferences("LoginPreferences", Context.MODE_PRIVATE) ?: return
@@ -69,15 +84,17 @@ class MainActivity : AppCompatActivity() {
             -> R.drawable.dice6
         }
         diceImgTwo.setImageResource(drawableResource2)
+        val dado1 = binding.textView1
+        if (drawableResource == 1)
+            dado1.text = "1"
     }
 
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
         return true
-
     }
 
-
 }
+
 
 

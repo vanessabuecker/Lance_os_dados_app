@@ -23,15 +23,11 @@ class MainActivity : AppCompatActivity() {
         val actionbar = supportActionBar
         actionbar?.setDisplayHomeAsUpEnabled(true)
 
-        val button = binding.button
-
-        val text_view_title = binding.textViewTitle
-        val share_button = binding.floatingActionButton
         val username = intent.getStringExtra("Username")
         val newTitle = getString(R.string.welcome, username)
-        text_view_title.text = newTitle
+        binding.textViewTitle.text = newTitle
 
-        share_button.setOnClickListener {
+        binding.floatingActionButton.setOnClickListener {
             val intent = Intent(Intent.ACTION_SEND)
             intent.putExtra(Intent.EXTRA_TEXT, "Você é sortudo!")
             intent.setPackage("com.whatsapp")
@@ -56,7 +52,7 @@ class MainActivity : AppCompatActivity() {
         diceImgOne = binding.dice1
         diceImgTwo = binding.dice2
 
-        button.setOnClickListener {
+        binding.button.setOnClickListener {
             rollDice()
         }
 

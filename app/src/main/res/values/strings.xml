@@ -7,4 +7,6 @@
     <string name="lets_go">jogar!</string>
     <string name="special">Especial</string>
     <string name="welcome">"Será que hoje é o seu dia de sorte, %s?"</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

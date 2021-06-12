@@ -28,10 +28,9 @@ class SpecialActivity : AppCompatActivity() {
 
         val button = binding.buttonPlay
 
-        val tv_welcome = binding.textViewTitle
         val player = intent.getStringExtra("username")
         val message = resources.getString(R.string.welcome, player)
-        tv_welcome.text = message
+        binding.textViewTitle.text = message
 
         special_dice1 = binding.specialDice1
         special_dice2 = binding.specialDice2

@@ -19,8 +19,6 @@ class DiceRollFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-
-
         binding = FragmentDiceRollBinding.inflate(inflater, container, false)
 
         var regularPlayer = arguments?.getString("regularPlayer") ?: ""

@@ -5,20 +5,20 @@
     android:id="@+id/nav_graph_main"
     app:startDestination="@id/registerUserFragment">
 
-<fragment
-    android:id="@+id/registerUserFragment"
-    android:label=" "
-    android:name="com.vbuecker.app_dice_play_devventure.RegisterUserFragment"
-    tools:layout="@layout/fragment_register_user">
-    <action
-        android:id="@+id/action_registerUserFragment_to_diceRollFragment"
-        app:destination="@id/diceRollFragment" />
+    <fragment
+        android:id="@+id/registerUserFragment"
+        android:name="com.vbuecker.app_dice_play_devventure.RegisterUserFragment"
+        android:label=" "
+        tools:layout="@layout/fragment_register_user">
+        <action
+            android:id="@+id/action_registerUserFragment_to_diceRollFragment"
+            app:destination="@id/diceRollFragment" />
 
-    <action
-        android:id="@+id/action_registerUserFragment_to_diceRollSpecialFragment"
-        app:destination="@id/diceRollSpecialFragment" />
+        <action
+            android:id="@+id/action_registerUserFragment_to_diceRollSpecialFragment"
+            app:destination="@id/diceRollSpecialFragment" />
 
-</fragment>
+    </fragment>
 
     <fragment
         android:id="@+id/diceRollFragment"

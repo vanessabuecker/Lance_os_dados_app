@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.vbuecker.app_dice_play_devventure.UserActivity">
+    android:orientation="vertical"
+    tools:context="com.vbuecker.app_dice_play_devventure.RegisterUserFragment">
 
     <ImageView
         android:id="@+id/dice"

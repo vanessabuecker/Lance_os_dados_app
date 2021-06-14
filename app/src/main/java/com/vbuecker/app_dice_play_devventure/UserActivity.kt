@@ -1,74 +1,56 @@
 package com.vbuecker.app_dice_play_devventure
 
-import android.annotation.SuppressLint
-import android.content.Context
-import android.content.Intent
+import android.graphics.BlendMode
+import android.graphics.BlendModeColorFilter
+import android.graphics.Color
+import android.graphics.PorterDuff
+import android.os.Build
 import android.os.Bundle
-import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.NavController
+import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.navigateUp
+import androidx.navigation.ui.setupActionBarWithNavController
 import com.vbuecker.app_lanamento_dados_devventure.R
-import com.vbuecker.app_lanamento_dados_devventure.databinding.ActivityUserBinding
+import kotlinx.android.synthetic.main.activity_user.*
 
 class UserActivity : AppCompatActivity() {
-    @SuppressLint("EditTextCommits")
-    private lateinit var binding: ActivityUserBinding
+
+    private lateinit var navController: NavController
+    private lateinit var appBarConfiguration: AppBarConfiguration
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityUserBinding.inflate(layoutInflater)
-        val usernameCached = getUsername()
-        usernameCached?.let { goUserActivity(usernameCached) }
+        setContentView(R.layout.activity_user)
 
-        setContentView(binding.root)
+        setSupportActionBar(toolbar)
 
-        supportActionBar?.title = "Lance os Dados"
+        navController = findNavController(R.id.NavHostFragment)
+        appBarConfiguration = AppBarConfiguration((navController.graph))
 
-        val edit_text_input_name = binding.editTextInputName
-        val button_special = binding.buttonSpecial
-        val button_next = binding.buttonNext
+        setupActionBarWithNavController(navController, appBarConfiguration)
+    }
 
-        button_next.setOnClickListener {
-            val name = binding.editTextInputName.text
-            val nameString = name.toString().trim()
-            if (nameString == "") {
-                Toast.makeText(
-                    applicationContext,
-                    R.string.toast_type_your_name,
-                    Toast.LENGTH_SHORT
-                ).show()
+    override fun onSupportNavigateUp(): Boolean {
+        toolbar.navigationIcon?.apply {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                colorFilter = BlendModeColorFilter(Color.WHITE, BlendMode.SRC_IN)
             } else {
-                saveUsername(nameString)
-                goUserActivity(nameString)
+                setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_IN)
             }
         }
-        button_special.setOnClickListener {
-            var player = edit_text_input_name.text.toString()
-            val intent = Intent(this, SpecialActivity::class.java)
-            intent.putExtra("username", player)
-            startActivity(intent)
-        }
-    }
-
-    private fun getUsername(): String? {
-        val sharedPref =
-            this.getSharedPreferences("LoginPreferences", Context.MODE_PRIVATE) ?: return null
-        return sharedPref.getString("username", null)
-    }
-
-    private fun saveUsername(username: String) {
-        val sharedPref =
-            this.getSharedPreferences("LoginPreferences", Context.MODE_PRIVATE) ?: return
-        with(sharedPref.edit()) {
-            putString("username", username)
-            commit()
-        }
-    }
-
-    private fun goUserActivity(username: String) {
-        val intent = Intent(this, MainActivity::class.java)
-        intent.putExtra("Username", username)
-        startActivity(intent)
+        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 
 }
+
+
+
+
+
+
+
+
+
+

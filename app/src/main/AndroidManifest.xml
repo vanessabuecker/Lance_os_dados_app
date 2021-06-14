@@ -12,15 +12,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.App_Lançamento_Dados_DevVenture">
-        <activity android:name="com.vbuecker.app_dice_play_devventure.SpecialActivity"/>
+
         <activity android:name="com.vbuecker.app_dice_play_devventure.UserActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
-        <activity android:name="com.vbuecker.app_dice_play_devventure.MainActivity"/>
     </application>
 
 </manifest>

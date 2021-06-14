@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.vbuecker.app_dice_play_devventure.SpecialActivity">
+    android:background="@color/white"
+    tools:context="com.vbuecker.app_dice_play_devventure.DiceRollFragment">
 
     <TextView
         android:id="@+id/text_view_title"
@@ -17,42 +18,42 @@
         android:text="@string/welcome"
         android:textAlignment="center"
         android:textColor="@color/gray_darker1"
-        android:textSize="24sp"
+        android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/special_dice_1"
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/dice_1"
         android:layout_width="140dp"
         android:layout_height="140dp"
         android:layout_marginTop="300dp"
         android:layout_marginEnd="40dp"
         android:layout_marginBottom="106dp"
         android:background="@android:color/transparent"
-        android:src="@drawable/specialdice1"
+        android:src="@drawable/dice_red"
         app:layout_constraintBottom_toTopOf="@+id/floatingActionButton"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dice_2"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/special_dice_2"
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/dice_2"
         android:layout_width="140dp"
         android:layout_height="140dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="300dp"
         android:layout_marginBottom="178dp"
-        android:src="@drawable/specialdice1"
-        app:layout_constraintBottom_toTopOf="@+id/button_play"
-        app:layout_constraintEnd_toStartOf="@+id/special_dice_1"
-        app:layout_constraintHorizontal_bias="0.294"
+        android:src="@drawable/dice_red"
+        app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <Button
-        android:id="@+id/button_play"
+        android:id="@+id/button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
@@ -66,7 +67,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/special_dice_2" />
+        app:layout_constraintTop_toBottomOf="@+id/dice_2" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton"
@@ -76,10 +77,12 @@
         android:layout_marginBottom="139dp"
         android:clickable="true"
         android:focusable="true"
+        android:foregroundTint="@color/gray_border"
         app:backgroundTint="@color/primary_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/special_dice_1"
+        app:layout_constraintTop_toBottomOf="@+id/dice_1"
+        app:rippleColor="#F8EDED"
         app:srcCompat="@android:drawable/ic_menu_share" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

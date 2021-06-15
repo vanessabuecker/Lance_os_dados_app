@@ -1,10 +1,7 @@
 package com.vbuecker.app_dice_play_devventure
 
-import android.graphics.BlendMode
-import android.graphics.BlendModeColorFilter
 import android.graphics.Color
 import android.graphics.PorterDuff
-import android.os.Build
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
@@ -34,12 +31,9 @@ class UserActivity : AppCompatActivity() {
 
     override fun onSupportNavigateUp(): Boolean {
         toolbar.navigationIcon?.apply {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                colorFilter = BlendModeColorFilter(Color.WHITE, BlendMode.SRC_IN)
-            } else {
-                setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_IN)
-            }
+            setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_IN)
         }
+
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 

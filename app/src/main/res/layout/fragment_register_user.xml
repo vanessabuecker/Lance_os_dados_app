@@ -20,33 +20,21 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
+        style="@style/DiceFormEditText"
         android:id="@+id/edit_text_input_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginEnd="36dp"
-        android:layout_marginBottom="250dp"
-        android:background="@drawable/edit_text_background"
         android:hint="@string/toast_type_your_name"
         android:inputType="textPersonName"
         android:maxLength="10"
-        android:padding="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/button_next"
+        style="@style/DiceFormButton"
         android:layout_width="150dp"
         android:layout_height="60dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginEnd="36dp"
-        android:layout_marginBottom="52dp"
-        android:background="@drawable/drawable_button_background"
-        android:padding="16dp"
         android:text="@string/next"
-        android:textColor="@android:color/white"
-        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias=".0"
@@ -54,16 +42,10 @@
 
     <Button
         android:id="@+id/button_special"
+        style="@style/DiceFormButton"
         android:layout_width="150dp"
         android:layout_height="60dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginEnd="36dp"
-        android:layout_marginBottom="52dp"
-        android:background="@drawable/drawable_button_background"
-        android:padding="16dp"
         android:text="@string/special"
-        android:textColor="@android:color/white"
-        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
